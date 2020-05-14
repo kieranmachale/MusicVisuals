@@ -8,6 +8,7 @@ public class AudioVisual extends Visual{
     private boolean songPlaying = true;
 
     Waveform waveform;
+    Frequency frequency;
 
     public void setup()
     {   
@@ -17,6 +18,7 @@ public class AudioVisual extends Visual{
         loadAudio("01 A Rainbow in Curved Air.mp3");
 
         waveform = new Waveform(this);
+        frequency = new Frequency(this);
        
     }
 
