@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import ie.tudublin.C16777089.AudioVisual;
+import C16777089.AudioVisual;
 
 public class Main
 {	
