@@ -7,12 +7,16 @@ public class AudioVisual extends Visual{
     private boolean firstPress = true;
     private boolean songPlaying = true;
 
+    Waveform waveform;
+
     public void setup()
     {   
         startMinim();
         colorMode(HSB); 
 
         loadAudio("01 A Rainbow in Curved Air.mp3");
+
+        waveform = new Waveform(this);
        
     }
 
@@ -53,8 +57,7 @@ public class AudioVisual extends Visual{
 
     public void draw()
     {
-        background(0);
-        stroke(255);
-        
+        background(0); 
+        waveform.drawWaveform();
     }
 }
