@@ -1,6 +1,9 @@
 package C16777089;
 
 import ie.tudublin.*;
+import processing.data.Table;
+import processing.data.TableRow;
+import java.util.ArrayList;
 
 public class AudioVisual extends Visual{
     
@@ -73,12 +76,24 @@ public class AudioVisual extends Visual{
             float y = map(i, 0, numLines, textGap, height - textGap);
 
             textAlign(CENTER,CENTER);
-            text("Insert text", 40, y);
+            fill(0);
+            text("Insert text", 55, y);
         }
     }
 
     public void draw()
     {
+
+        background(0);
+        try
+        {
+            calculateFFT(); 
+        }
+        catch(VisualException e)
+        {
+            e.printStackTrace();
+        }
+
         background(0); 
         drawSidebar();
 

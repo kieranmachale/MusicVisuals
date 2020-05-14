@@ -26,7 +26,7 @@ public class Waveform {
                 , 255
             );
 
-            av.line(i, halfHeight, i, halfHeight + halfHeight * av.getAudioBuffer().get(i));
+            av.line(i, halfHeight, i, halfHeight + halfHeight * av.getAudioBuffer().get(i) * 1.2f);
             
         }
     }
