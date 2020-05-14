@@ -6,20 +6,19 @@ public class Waveform {
     
     AudioVisual av;
     float halfHeight;
-    float border, numDots, r;
+    float border;
 
     public Waveform(AudioVisual av)
     {
         this.av = av;
         halfHeight = this.av.height / 2;
-        border = this.av.width * 0.02f;
-        numDots = this.av.width / 16;
+        border = 110;
     }
 
     public void drawWaveform()
     {
         av.colorMode(PApplet.HSB);
-        for(int i = 0; i < av.getAudioBuffer().size(); i++)
+        for(int i = (int)border; i < av.getAudioBuffer().size(); i++)
         {
             av.stroke(
             PApplet.map(i, 0, av.getAudioBuffer().size(), 0, 255)

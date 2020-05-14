@@ -5,6 +5,7 @@ import processing.core.*;
 public class Frequency {
 
     AudioVisual av;
+    float bottomBorder, leftBorder;
 
     public Frequency(AudioVisual av)
     {

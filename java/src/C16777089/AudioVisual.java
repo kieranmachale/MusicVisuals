@@ -6,6 +6,8 @@ public class AudioVisual extends Visual{
     
     private boolean firstPress = true;
     private boolean songPlaying = true;
+    private int numLines;
+    private float textGap;
 
     Waveform waveform;
     Frequency frequency;
@@ -57,9 +59,29 @@ public class AudioVisual extends Visual{
 
     }
 
+    public void drawSidebar()
+    {
+        stroke(255);
+        fill(120);
+        rect(10, 10, 100, 480);
+
+        numLines = height/100;
+        textGap = 50;
+
+        for(int i = 0; i < numLines; i++)
+        {
+            float y = map(i, 0, numLines, textGap, height - textGap);
+
+            textAlign(CENTER,CENTER);
+            text("Insert text", 40, y);
+        }
+    }
+
     public void draw()
     {
         background(0); 
+        drawSidebar();
+
         waveform.drawWaveform();
     }
 }
