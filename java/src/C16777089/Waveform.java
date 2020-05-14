@@ -29,10 +29,6 @@ public class Waveform {
 
             av.line(i, halfHeight, i, halfHeight + halfHeight * av.getAudioBuffer().get(i));
             
-            float x = PApplet.map(i, 0, numDots, border, av.width - border + 10);
-
-            av.stroke(255);
-            av.ellipse(x, border * 3, 10, 10);
         }
     }
 }
