@@ -4,6 +4,9 @@ import ie.tudublin.*;
 
 public class AudioVisual extends Visual{
     
+    private boolean firstPress = true;
+    private boolean songPlaying = true;
+
     public void setup()
     {   
         startMinim();
@@ -19,12 +22,33 @@ public class AudioVisual extends Visual{
     }
 
     public void keyPressed()
-    {
-        if (key == ' ')
+    {   
+
+        if(key == ' ')
         {
-            getAudioPlayer().cue(0);
-            getAudioPlayer().play();
+            if(firstPress)
+            {
+                getAudioPlayer().cue(0);
+                getAudioPlayer().play();
+
+                firstPress = false;
+            }
+            else
+            {
+                if(songPlaying)
+                {
+                    getAudioPlayer().pause();
+                    songPlaying = false;
+                }
+                else
+                {
+                    getAudioPlayer().play();
+                    songPlaying = true;
+                }
+            }
+
         }
+
     }
 
     public void draw()
