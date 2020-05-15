@@ -31,8 +31,8 @@ public class Frequency {
             av.rect(i * bandGap + border, av.height - bottomBorder, bandGap, -av.getSmoothedBands()[i] * 0.5f);
 
             av.noStroke();
-            av.fill(c, 255, 200);
-            av.rect(i * bandGap + border, av.height - bottomBorder, 35, -av.getSmoothedBands()[i] * 0.4f);
+            av.fill(c, 255, 150);
+            av.rect(i * bandGap + border, av.height - bottomBorder, 40, -av.getSmoothedBands()[i] * 0.4f);
 
         }
         offset += 200/250.0f;

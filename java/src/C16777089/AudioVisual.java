@@ -14,8 +14,8 @@ public class AudioVisual extends Visual{
     private boolean freqSelected = false;
     private boolean circSelected = false;
 
-    private int numLines;
-    private float textGap;
+    private int numLines, numPoints;
+    private float textGap, brdr;
 
 
     Waveform waveform;
@@ -137,6 +137,27 @@ public class AudioVisual extends Visual{
         
     }
 
+    public void drawBackground()
+    {
+        numPoints = width/16;
+        brdr = 135;
+        float pGap = width/numPoints;
+        float gap = (pGap * 1.8f);
+
+        for(int j = 1; j < numPoints; j++)
+        {
+            for(int i = 0; i < numPoints; i++)
+            {
+                float x = (i * gap);
+                float y = (j * gap);
+                stroke(60);
+                fill(60);
+                ellipse(x + brdr, y - 7, 2,2);
+
+            }
+        }
+    }
+
     public void draw()
     {
 
@@ -151,8 +172,10 @@ public class AudioVisual extends Visual{
         }
 
         calculateFrequencyBands(); 
+
         background(0); 
         drawSidebar();
+        drawBackground();
 
         if(wfSelected){
             waveform.drawWaveform();
