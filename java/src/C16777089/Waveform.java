@@ -30,7 +30,13 @@ public class Waveform {
                 , 255
             );
 
-            av.line(i, halfHeight, i, halfHeight + halfHeight * av.getAudioBuffer().get(i) * 0.8f);
+            float l1 = halfHeight + halfHeight * av.getAudioBuffer().get(i) * 1.8f;
+            float y1 = PApplet.lerp(halfHeight, l1, 0.5f);
+
+            float l2 = halfHeight + halfHeight * av.getAudioBuffer().get(i) * 1.6f;
+            float y2 = PApplet.lerp(halfHeight, l2, 0.5f);
+
+            av.line(i, halfHeight, i, y1);
             
             //Inner waveform
             av.stroke(
@@ -38,7 +44,7 @@ public class Waveform {
                 , 180
                 , 100
             );
-            av.line(i, halfHeight, i, halfHeight + halfHeight * av.getAudioBuffer().get(i) * 0.6f);
+            av.line(i, halfHeight, i, y2);
 
             av.stroke(30);
             av.line(border + 10, halfHeight, av.width, halfHeight);
