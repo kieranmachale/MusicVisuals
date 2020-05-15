@@ -9,22 +9,42 @@ public class AudioVisual extends Visual{
     
     private boolean firstPress = true;
     private boolean songPlaying = true;
+
+    private boolean wfSelected = false;
+    private boolean freqSelected = false;
+    private boolean circSelected = false;
+
     private int numLines;
     private float textGap;
+    
 
     Waveform waveform;
     Frequency frequency;
+
+    ArrayList<Menu> menuItemArray = new ArrayList<Menu>();
 
     public void setup()
     {   
         startMinim();
         colorMode(HSB); 
 
+        loadMenu();
         loadAudio("01 A Rainbow in Curved Air.mp3");
 
         waveform = new Waveform(this);
         frequency = new Frequency(this);
        
+    }
+
+    public void loadMenu()
+    {
+        Table t = loadTable("menu.csv", "header");
+
+        for(TableRow row:t.rows())
+		{
+			Menu m = new Menu(row);
+			menuItemArray.add(m);
+		}
     }
 
     public void settings()
@@ -60,6 +80,27 @@ public class AudioVisual extends Visual{
 
         }
 
+        if(key == '1')
+        {
+            wfSelected = true;
+            freqSelected = false;
+            circSelected = false;
+        }
+
+        if(key == '2')
+        {
+            wfSelected = false;
+            freqSelected = true;
+            circSelected = false;
+        }
+
+        if(key == '3')
+        {
+            wfSelected = false;
+            freqSelected = false;
+            circSelected = true;
+        }
+
     }
 
     public void drawSidebar()
@@ -68,17 +109,32 @@ public class AudioVisual extends Visual{
         fill(120);
         rect(10, 10, 100, 480);
 
-        numLines = height/100;
+        numLines = width/128;
         textGap = 50;
+        int index = 1; 
 
-        for(int i = 0; i < numLines; i++)
+        for(Menu m: menuItemArray)
         {
-            float y = map(i, 0, numLines, textGap, height - textGap);
+            float y = map(index, 0, numLines, textGap, height - textGap);
 
             textAlign(CENTER,CENTER);
-            fill(0);
-            text("Insert text", 55, y);
+            
+            if(index % 2 == 0)
+            {
+                fill(50,255,255);
+            }
+            else{
+                fill(0);
+            }
+            
+            text(m.getMenuItem(), 60, y);
+            ++index;
         }
+
+        textAlign(CENTER,CENTER);
+        fill(255);
+        text("Hit space to begin song", width/2, 20);  
+        
     }
 
     public void draw()
@@ -97,6 +153,9 @@ public class AudioVisual extends Visual{
         background(0); 
         drawSidebar();
 
-        waveform.drawWaveform();
+        if(wfSelected){
+            waveform.drawWaveform();
+        }
+        
     }
 }
