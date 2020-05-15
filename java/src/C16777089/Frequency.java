@@ -11,4 +11,6 @@ public class Frequency {
     {
         this.av = av;
     }
+
+    
 }

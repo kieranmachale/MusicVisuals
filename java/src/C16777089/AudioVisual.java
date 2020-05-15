@@ -16,7 +16,7 @@ public class AudioVisual extends Visual{
 
     private int numLines;
     private float textGap;
-    
+
 
     Waveform waveform;
     Frequency frequency;
@@ -30,6 +30,7 @@ public class AudioVisual extends Visual{
 
         loadMenu();
         loadAudio("01 A Rainbow in Curved Air.mp3");
+        //loadAudio("06 Rhapsody in Green.mp3");
 
         waveform = new Waveform(this);
         frequency = new Frequency(this);
@@ -121,7 +122,7 @@ public class AudioVisual extends Visual{
             
             if(index % 2 == 0)
             {
-                fill(50,255,255);
+                fill(45,255,255);
             }
             else{
                 fill(0);
@@ -133,7 +134,7 @@ public class AudioVisual extends Visual{
 
         textAlign(CENTER,CENTER);
         fill(255);
-        text("Hit space to begin song", width/2, 20);  
+        text("Hit space to begin", width/2, 20);  
         
     }
 
@@ -155,6 +156,14 @@ public class AudioVisual extends Visual{
 
         if(wfSelected){
             waveform.drawWaveform();
+        }
+
+        if(freqSelected){
+
+        }
+
+        if(circSelected){
+            
         }
         
     }
