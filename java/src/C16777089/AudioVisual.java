@@ -30,7 +30,6 @@ public class AudioVisual extends Visual{
 
         loadMenu();
         loadAudio("01 A Rainbow in Curved Air.mp3");
-        //loadAudio("06 Rhapsody in Green.mp3");
 
         waveform = new Waveform(this);
         frequency = new Frequency(this);
@@ -122,7 +121,7 @@ public class AudioVisual extends Visual{
             
             if(index % 2 == 0)
             {
-                fill(45,255,255);
+                fill(200);
             }
             else{
                 fill(0);
@@ -151,6 +150,7 @@ public class AudioVisual extends Visual{
             e.printStackTrace();
         }
 
+        calculateFrequencyBands(); 
         background(0); 
         drawSidebar();
 
@@ -159,7 +159,7 @@ public class AudioVisual extends Visual{
         }
 
         if(freqSelected){
-
+            frequency.drawSpectrum();
         }
 
         if(circSelected){
