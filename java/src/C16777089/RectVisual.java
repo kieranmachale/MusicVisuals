@@ -41,12 +41,14 @@ public class RectVisual {
                 av.noStroke();
                 av.fill(cGap * i % 255);
 
-                av.rect(x + 78, y1 - 20, r , r * av.getAudioBuffer().get(i) * 5.0f);
-
+                av.rect(x + 78, y1 - 20, r , r * av.getAudioBuffer().get(i) * 2.0f);
+  
                 av.stroke(cGap, 255, 175);
-                av.noFill();
-                av.ellipse(av.width/2, av.height/2, (5 *r) * av.getAudioBuffer().get(i) * 5, (5 * r) * av.getAudioBuffer().get(i) * 5);
+                av.fill(cGap, 255, 50);
+                av.ellipse(av.width/2, av.height/2, 100 * av.getAudioBuffer().get(i) * 5, 100 * av.getAudioBuffer().get(i) * 5);
+                
             }
+
             offset += 16;
         }
         

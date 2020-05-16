@@ -29,7 +29,7 @@ public class AudioVisual extends Visual{
         colorMode(HSB); 
 
         loadMenu();
-        loadAudio("01 A Rainbow in Curved Air.mp3");
+        loadAudio("10 The Rest Is Noise.mp3");
 
         waveform = new Waveform(this);
         frequency = new Frequency(this);
