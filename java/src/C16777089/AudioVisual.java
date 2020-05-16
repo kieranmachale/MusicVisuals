@@ -12,14 +12,14 @@ public class AudioVisual extends Visual{
 
     private boolean wfSelected = false;
     private boolean freqSelected = false;
-    private boolean circSelected = false;
+    private boolean rectSelected = false;
 
     private int numLines, numPoints;
-    private float textGap, brdr;
-
+    private float textGap, brdr, x1, y1;
 
     Waveform waveform;
     Frequency frequency;
+    RectVisual rect;
 
     ArrayList<Menu> menuItemArray = new ArrayList<Menu>();
 
@@ -33,6 +33,7 @@ public class AudioVisual extends Visual{
 
         waveform = new Waveform(this);
         frequency = new Frequency(this);
+        rect = new RectVisual(this);
        
     }
 
@@ -63,6 +64,8 @@ public class AudioVisual extends Visual{
                 getAudioPlayer().play();
 
                 firstPress = false;
+                wfSelected = true; 
+                
             }
             else
             {
@@ -84,21 +87,21 @@ public class AudioVisual extends Visual{
         {
             wfSelected = true;
             freqSelected = false;
-            circSelected = false;
+            rectSelected = false;
         }
 
         if(key == '2')
         {
             wfSelected = false;
             freqSelected = true;
-            circSelected = false;
+            rectSelected = false;
         }
 
         if(key == '3')
         {
             wfSelected = false;
             freqSelected = false;
-            circSelected = true;
+            rectSelected = true;
         }
 
     }
@@ -150,8 +153,8 @@ public class AudioVisual extends Visual{
             {
                 float x = (i * gap);
                 float y = (j * gap);
-                stroke(60);
-                fill(60);
+                stroke(50);
+                fill(50);
                 ellipse(x + brdr, y - 7, 2,2);
 
             }
@@ -161,7 +164,6 @@ public class AudioVisual extends Visual{
     public void draw()
     {
 
-        background(0);
         try
         {
             calculateFFT(); 
@@ -173,7 +175,7 @@ public class AudioVisual extends Visual{
 
         calculateFrequencyBands(); 
 
-        background(0); 
+        background(0);
         drawSidebar();
         drawBackground();
 
@@ -185,9 +187,9 @@ public class AudioVisual extends Visual{
             frequency.drawSpectrum();
         }
 
-        if(circSelected){
-            
+        if(rectSelected){
+            rect.drawRects();
         }
-        
+
     }
 }
