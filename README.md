@@ -19,7 +19,7 @@ by using the keys 1,2,3 and 4. I have included these instructions in the window 
 the audio and visuals by hitting space.
 
 Youtube video showing the program running: 
-[![YouTube](https://www.youtube.com/watch?v=_Bv1tinv_IQ&feature=youtu.be);
+[![YouTube](https://www.youtube.com/watch?v=_Bv1tinv_IQ&feature=youtu.be)
 
 # How it works
 
@@ -44,6 +44,9 @@ Before this assignment I was only familiar basic OOP learned concepts from the f
 satisfied that I was able to incorporate much of the new concepts I learned in semester 2 into my project; inheritance, polymorphism,
 the use of processing libraries, storing data from text files, and more. As far as my vision for this assignment,
 I wanted to create a dynamic visualiser with multiple modes that could be switched between during runtime, and I'm happy that I was able to do so. 
+
+
+[![YouTube](https://www.youtube.com/watch?v=_Bv1tinv_IQ&feature=youtu.be)
 
 
 # Markdown Tutorial
