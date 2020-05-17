@@ -1,17 +1,13 @@
 # Music Visualiser Project
 
-Name:
+Name: Kieran Mac Hale
 
-Student Number: 
+Student Number: C16777089
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
 
 # Description of the assignment
+ For this assignment I created an audio visual java program that uses the PApplet processing library to process
+ visuals that respond to audio information such as amplitude, frequency and sample rate. 
 
 # Instructions
 
