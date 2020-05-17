@@ -15,7 +15,7 @@ public class AudioVisual extends Visual{
     private boolean rectSelected = false;
 
     private int numLines, numPoints;
-    private float textGap, brdr, x1, y1;
+    private float textGap, brdr;
 
     Waveform waveform;
     Frequency frequency;
@@ -104,6 +104,13 @@ public class AudioVisual extends Visual{
             rectSelected = true;
         }
 
+        if(key == '4')
+        {
+            wfSelected = true;
+            rectSelected = true;
+            freqSelected = false;
+        }
+
     }
 
     public void drawSidebar()
@@ -112,7 +119,7 @@ public class AudioVisual extends Visual{
         fill(120);
         rect(10, 10, 100, 480);
 
-        numLines = width/128;
+        numLines = 10;
         textGap = 50;
         int index = 1; 
 
