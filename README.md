@@ -46,7 +46,8 @@ the use of processing libraries, storing data from text files, and more. As far 
 I wanted to create a dynamic visualiser with multiple modes that could be switched between during runtime, and I'm happy that I was able to do so. 
 
 
-[![YouTube](https://www.youtube.com/watch?v=_Bv1tinv_IQ&feature=youtu.be)
+[![YouTube](https://www.youtube.com/watch?v=_Bv1tinv_IQ&t=1s)
+https://www.youtube.com/watch?v=_Bv1tinv_IQ&t=1s
 
 
 # Markdown Tutorial
